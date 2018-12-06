@@ -1,0 +1,21 @@
+<!-- Modal -->
+<div class="modal" [ngClass]="{'modal':true, 'fade':true, 'show':showBox}" [ngStyle]="{'display':modalShow ? 'block': 'none','backgroundColor':'rgba(0, 0, 0, 0.52)'}" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" (click)="Close()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{message}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" (click)="Close()" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn" (click)="Confirm()">Excluir Publicação</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- ------------------->

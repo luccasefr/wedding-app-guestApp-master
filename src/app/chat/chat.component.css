@@ -1,0 +1,241 @@
+* {
+    font-family: "Gotham Rounded";
+    font-weight: 550;
+    text-align: left;
+}
+
+.title {
+    display: flex;
+    padding-bottom: 5%;
+}
+
+/*************************************************************/
+
+.title img {
+    height: 35px;
+    padding-right: 5px;
+}
+
+.title h1 {
+    text-align: center;
+    font-size: 30px;
+    padding-left: 3%;
+    padding-top: 3%;
+}
+
+.bgImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fa9a82;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    float: left;
+    vertical-align: middle;
+}
+
+/*******************************************************/
+
+.posts {
+    background-color: rgba(255, 255, 255, 0.159);
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.telaChat {
+    background: transparent;
+    width: 90%;
+    padding-left: 5%;
+    text-align: center;
+}
+
+/***********************    INPUT ENVIAR MSG   *************************************/
+
+.containerFooter {
+    margin-left: 4%;
+    text-align: center;
+}
+
+.footer {
+    /* COLOCAR O @MEDIA PARA OUTROS DISPOSITIVOS NO WIDTH */
+    position: absolute;
+    bottom: 0;
+    width: 92%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.post-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.400);
+    opacity: 0.6;
+    width: 100% !important;
+}
+
+textarea {
+    width: 90%;
+    resize: none;
+    background-color: transparent;
+    border: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input[type=submit] {
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+}
+
+input[type=submit]:focus {
+    outline: none;
+}
+
+/*********************** CHAT ******************************/
+
+.chat {
+    height: calc(100% - 69px);
+}
+
+.chat-container {
+    height: 100%;
+}
+
+/* Conversation */
+
+.conversation {
+    position: relative;
+    background: transparent;
+    z-index: 0;
+}
+
+.conversation ::-webkit-scrollbar {
+    transition: all .5s;
+    width: 5px;
+    height: 0px;
+    z-index: 10;
+}
+
+.conversation ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.conversation ::-webkit-scrollbar-thumb {
+    background: #b3ada7;
+}
+
+.conversation .conversation-container {
+    overflow: hidden;
+    padding: 0 16px;
+    margin-bottom: 5px;
+}
+
+.conversation .conversation-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Messages */
+
+.message {
+    clear: both;
+    line-height: 18px;
+    font-size: 15px;
+    padding: 8px;
+    position: relative;
+    margin: 8px 0;
+    max-width: 85%;
+    word-wrap: break-word;
+    z-index: -1;
+}
+
+.message:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.message:first-child {
+    margin: 16px 0 8px;
+}
+
+.message.received {
+    color: #000;
+    background: #fff;
+    border-radius: 0px 5px 5px 5px;
+    float: left;
+}
+
+.message.received .metadata {
+    padding: 0 0 0 16px;
+}
+
+.message.received:after {
+    border-width: 0px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    top: 0;
+    left: -10px;
+}
+
+.message.sent {
+    background: #fa9a82;
+    color: #fff;
+    border-radius: 5px 0px 5px 5px;
+    float: right;
+}
+
+.message.sent:after {
+    border-width: 0px 0 10px 10px;
+    border-color: transparent transparent transparent #fa9a82;
+    top: 0;
+    right: -10px;
+}
+
+/******************* Small Screens *********************/
+
+@media screen and (max-height: 1366px) {
+    .posts {
+        max-height: 82%;
+    }
+}
+
+@media screen and (max-height: 1024px) {
+    .posts {
+        max-height: 75%;
+    }
+}
+
+@media screen and (max-height: 736px) {
+    .posts {
+        max-height: 73%;
+    }
+}
+
+@media screen and (max-height: 667px) {
+    .posts {
+        max-height: 70%;
+    }
+}
+
+@media screen and (max-height: 640px) {
+    .posts {
+        max-height: 69%;
+    }
+}
+
+@media screen and (max-height: 577px) {
+    .posts {
+        max-height: 65%;
+    }
+}

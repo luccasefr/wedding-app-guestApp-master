@@ -1,0 +1,41 @@
+<div style="background-image:url('assets/imgs/bgHome.png')" class="bg px-3">
+    <div class="title">
+        <img src="assets/imgs/mural.png" style="max-width:70%;max-height:22vw" alt="">
+        <h1>Mural</h1>
+    </div>
+    <form (ngSubmit)="onSubmit()" #postForm="ngForm">
+        <div class="post-box p-2">
+            <textarea required [(ngModel)]="text" name="name" rows="6"></textarea>
+            <div *ngIf="imagePreview" class="imagePreview-box">
+                <div [ngStyle]="{'backgroundImage':'url('+imagePreview+')'}" class="imagePreview">
+                    <fa-icon (click)="removeImage()" [icon]="faTimesCircle"></fa-icon>
+                </div>
+            </div>
+            <div class="options">
+                <label for="postImage"><fa-icon [icon]="faImage" ></fa-icon></label>
+                <input type="file" (change)="onLoadImage($event)" class="d-none" #imageInput id="postImage" name="" value="">
+                <input type="submit" [disabled]="!postForm.valid" name="" value="Enviar">
+                <ngx-loading [show]="loading"></ngx-loading>
+            </div>
+        </div>
+    </form>
+    <div class="posts mt-2 py-2">
+        <div class="row mx-0" style="justify-content: center;color:gray">
+            <div *ngFor="let post of posts" class="col-12">
+                <div class="postName">
+                    <div class="guestPicture" [ngStyle]="{'backgroundImage':post.imgPerfil ? 'url('+post.imgPerfil+')': 'none'}"></div><span class="ml-2">{{post.guest.name}}</span>
+                </div>
+                <div class="text" style="padding-left: 2.7rem;">
+                    {{post.text}}
+                </div>
+                <img *ngIf="post.image" [src]="post.image" width="100%" style="padding-left: 2.7rem;" alt="">
+                <div class="likeBox" (click)="like(post)" style="padding-left: 2.7rem;">
+                    {{post.guests_likes.length}}<fa-icon [icon]="faThumbsUp" class="ml-1" style="cursor:pointer"></fa-icon>
+                </div>
+                <fa-icon *ngIf="post.isMine" (click)="showModalForDelete(post)" [icon]="faTrashAlt" class="trash"></fa-icon>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-modal #deleteModal></app-modal>

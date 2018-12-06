@@ -1,0 +1,78 @@
+<div style="background-image:url('assets/imgs/bgHome.png')" class="singles-container">
+    <div *ngIf="userService.user.is_on_singles_meeting==0 && !editing" class=" text-center">
+        <h2>Crush</h2>
+        <div class="mt-3">
+            Que tal encontrar uma companhia durante a recepção?
+        </div>
+        <div class="">
+            <button type="button" (click)="editing=true" name="button">Vamos Lá</button>
+        </div>
+    </div>
+    <div *ngIf="editing" class="row m-0 d-flex flex-column align-items-center">
+        <div class="images d-flex">
+            <div class="profileImg" [ngStyle]="{backgroundImage:'url('+userService.user.profileImgData+')'}">
+                <label for="profileImg"></label>
+                <input type="file" (change)="uploadProfilleImage($event)" id="profileImg" class="d-none" name="" value="">
+            </div>
+            <div class="secondImgs">
+                <div class="photo1" [ngStyle]="{backgroundImage:'url('+userService.user.image1Data+')'}">
+                    <label for="photo1"></label>
+                    <input type="file" id="photo1" (change)="uploadImage1Image($event)" class="d-none" name="" value="">
+                </div>
+                <div class="photo2" [ngStyle]="{backgroundImage:'url('+userService.user.image2Data+')'}">
+                    <label for="photo2"></label>
+                    <input type="file" id="photo2" (change)="uploadImage2Image($event)" class="d-none" name="" value="">
+                </div>
+                <div class="photo3" [ngStyle]="{backgroundImage:'url('+userService.user.image3Data+')'}">
+                    <label for="photo3"></label>
+                    <input type="file" id="photo3" (change)="uploadImage3Image($event)" class="d-none" name="" value="">
+                </div>
+            </div>
+        </div>
+        <form #singlesForm="ngForm" class="w-100" (ngSubmit)="onSubmit()">
+            <div class="mt-4">
+                <div class="group">
+                    <label for="">Fale um pouco sobre você</label>
+                    <textarea type="text" class="w-100" autocomplete="off" required [(ngModel)]="data.about" name="age" value=""></textarea>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <label for="" class="d-block label">O que você procura</label>
+                <div class="row m-0">
+                    <div class="col-6">
+                        <input type="radio"autocomplete="off" required [(ngModel)]="data.want_gender_id" name="gender" id="male" value="1"><label for="male">Homem</label>
+                    </div>
+                    <div class="col-6">
+                        <div class="float-right">
+                            <input type="radio"autocomplete="off" required [(ngModel)]="data.want_gender_id" name="gender" id="female" value="2"><label for="female">Mulher</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="mt-4" [disabled]="!singlesForm.form.valid" name="" value="Confirmar">
+        </form>
+    </div>
+    <div *ngIf="choosing" class="">
+        <div class="choose-container" *ngIf="userService.user.is_on_singles_meeting==1 && !loading && done && !finishedMatch">
+            <div class="mainImg" [ngStyle]="{'backgroundImage':actualGuest.mainImg ? 'url('+actualGuest.mainImg+')': 'none'}"></div>
+            <div class="otherImgs">
+                <div class="img1" [ngStyle]="{'backgroundImage':actualGuest.img1 ? 'url('+actualGuest.img1+')': 'none'}"></div>
+                <div class="img2" [ngStyle]="{'backgroundImage':actualGuest.img2 ? 'url('+actualGuest.img2+')': 'none'}"></div>
+                <div class="img3" [ngStyle]="{'backgroundImage':actualGuest.img3 ? 'url('+actualGuest.img3+')': 'none'}"></div>
+            </div>
+            <div class="info">
+                {{actualGuest.name}},{{actualGuest.age}}
+            </div>
+        </div>
+        <div *ngIf="userService.user.is_on_singles_meeting!=1 && !loading || finishedMatch" class="message-container">
+            <p>Não há pessoas disponíveis no momento</p>
+        </div>
+        <fa-icon class="like" *ngIf=" !finishedMatch" (click)="like()" [icon]="faHeart" ></fa-icon>
+        <fa-icon class="deslike" *ngIf=" !finishedMatch" (click)="deslike()" [icon]="faTimes" ></fa-icon>
+    </div>
+
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+</div>
+
+
+

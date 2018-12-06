@@ -1,0 +1,14 @@
+<div style="background-image:url('assets/imgs/bgHome.png')" class="bg px-3 info-container">
+    <form #playlistform="ngForm" (ngSubmit)="onSubmit()">
+        <label for="">Nome da musica</label>
+        <input type="text" autocomplete="off" required [(ngModel)]="data.name" name="musicName" value="">
+        <label for="">Artista</label>
+        <input type="text" autocomplete="off" required [(ngModel)]="data.artist" name="artistName" value="">
+        <input type="submit" [disabled]="!playlistform.valid" value="Indicar">
+        <ngx-loading [show]="loading"></ngx-loading>
+    </form>
+    <h2 class="mt-3">Músicas indicadas</h2>
+    <div class="songBox" *ngFor="let song of songs">
+        {{song.name}} - {{song.artist}}<span class="float-right" (click)="like(song)">{{song.guests_likes.length}}<fa-icon [icon]="faThumbsUp" class="ml-1"></fa-icon></span>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div style="background-image:url('assets/imgs/bgHome.png')" class="bg px-3">
+    <div class="title">
+        <img src="assets/imgs/solteiros.png" style="max-width:70%;max-height:22vw" alt="">
+        <h1>Matches</h1>
+    </div>
+    
+    <div class="matches">
+        <div *ngFor="let match of matches">
+            <div class="postName" (click)="router.navigate(['/chat', match.id, match.name])">  
+                <div class="bgImg" [ngStyle]="{'backgroundImage':'url('+match.imgPerfil+')'}"></div>
+                <span class="matchesName">{{match.name}}</span>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <ngx-loading [show]="loading"></ngx-loading>
+</div>
+

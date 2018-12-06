@@ -1,0 +1,60 @@
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.title {
+    display: flex;
+}
+
+.title img {
+    height: 35px;
+    padding-right: 5px;
+}
+
+.title h1 {
+    color: #f1a08d;
+    font-size: 30px;
+}
+ul { 
+    list-style-type: none; 
+}
+li{
+    padding-top: 5%;
+}
+.matches {
+    padding-top: 10%;
+
+}
+.postName{
+    display: flex;
+    align-items: center;
+    padding-top: 5%;
+}
+.bgImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fa9a82;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    float: left;
+    vertical-align: middle;
+}
+
+.matchesName {
+    padding-left: 3%;
+}
+hr{
+    margin: 0px;
+    opacity: 0.4;
+}

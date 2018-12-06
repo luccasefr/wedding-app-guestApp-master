@@ -1,0 +1,45 @@
+<div style="background-image:url('assets/imgs/bgHome.png')" class="bg px-3">
+
+    <div class="title">
+        <div class="bgImg" [ngStyle]="{'backgroundImage':'url('+imgPerfil+')'}"></div>
+        <h1>{{name}}</h1>
+    </div>
+
+    <div [ngClass]="{'posts': msg == true}">
+        <div class="telaChat">
+            <div class="container">
+                <div class="chat">
+                    <div class="chat-container">
+                        <div class="conversation">
+                            <div class="conversation-container">
+                            <div *ngFor="let conversation of conversations">
+                                    <!--COLOCAR HORARIO DA MENSAGEM-->
+                                 <div class="message sent" *ngIf="id != conversation.from_id && conversation.message != null && conversation.message != 'undefined'" >
+                                    {{conversation.message}}
+                                </div>
+                                <!--COLOCAR HORARIO DA MENSAGEM-->
+                                 <div class="message received" *ngIf="id == conversation.from_id" >
+                                    {{conversation.message}}
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="containerFooter">
+    <div class="footer">
+        <form (ngSubmit)="onSubmit()" #postForm="ngForm" class="telaEnvioMensagem">
+            <div class="post-box p-2">
+                <textarea class="textArea" required [(ngModel)]="text" name="name" rows="3"></textarea>
+                <input type="submit" [disabled]="!postForm.valid" name="" value="Enviar">
+            </div>
+        </form>
+    </div>
+</div>
+
+<ngx-loading [show]="loading"></ngx-loading>

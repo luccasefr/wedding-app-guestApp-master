@@ -1,0 +1,13 @@
+<div class="nav-container p-2">
+    <fa-icon (click)="opened = !opened" [icon]="faBars" ></fa-icon>
+    <div class="d-flex">
+        Olá,<span *ngIf="userService.user">{{userService.user.name}}</span>
+        <div  [ngStyle]="{'backgroundImage':'url('+userService.user.profileImgData+')'}" class="bgImg ml-2">
+        </div>
+    </div>
+</div>
+<div [ngStyle]="{'left':opened ? 0 : '-70%'}" class="navbar">
+    <div *ngFor="let page of pages" (click)="router.navigate([page.route]);opened=false;" class="item px-2 my-2">
+        {{page.name}}
+    </div>
+</div>

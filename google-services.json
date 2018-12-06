@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "461597036592",
+    "firebase_url": "https://wedding-app-dc87e.firebaseio.com",
+    "project_id": "wedding-app-dc87e",
+    "storage_bucket": "wedding-app-dc87e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461597036592:android:35f2771158a18b38",
+        "android_client_info": {
+          "package_name": "br.com.approx.guestapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461597036592-rlh7r65nc68age984hihuu97245ddfe0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH5hi8MvAyPlVzJzlIpH7m3u2l0QNL8Bo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

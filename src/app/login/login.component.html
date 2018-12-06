@@ -1,0 +1,17 @@
+<div *ngIf="!scaning" style="background-image:url('assets/imgs/bgLogin.png')" class="loginBG">
+    <img src="assets/imgs/logo-branca.png" alt="">
+    <div class="loginBox">
+        <div (click)="openQRScaner()" class="scan px-3">
+            <fa-icon [icon]="faCamera" ></fa-icon>Convidado
+        </div>
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <input type="text" autocomplete="off" placeholder="codigo" [(ngModel)]="code" name="code" value="">
+            <input type="submit" name="" value="Entrar">
+        </form>
+    </div>
+    <p>Acesso noivo e noiva</p>
+</div>
+<div *ngIf="scaning" class="scaning">
+    <fa-icon (click)="hideQRScaner()" [icon]="faTimesCircle" ></fa-icon>
+    <img src="assets/imgs/select_square.png" alt="">
+</div>

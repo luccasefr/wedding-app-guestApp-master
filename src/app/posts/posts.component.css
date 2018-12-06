@@ -1,0 +1,103 @@
+.title{
+    display: flex;
+}
+
+.title img{
+    height: 35px;
+    padding-right: 5px;
+}
+
+.trash{
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.title h1{
+    color: #f1a08d;
+    font-size: 30px;
+}
+
+.post-box{
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.819);
+}
+
+.posts{
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.819);
+}
+
+.post-box .options{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.imagePreview-box{
+    display: flex;
+}
+
+.imagePreview{
+    width: 30vw;
+    height: 30vw;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.likeBox{
+    display: flex;
+    font-size: 20px;
+    justify-content: flex-end;
+}
+
+.guestPicture{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.postName{
+    display: flex;
+    align-items: center;
+}
+
+.imagePreview fa-icon{
+    top: -3px;
+    right: 4px;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+}
+
+label{
+    margin: 0;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #5e5e5e;
+}
+
+textarea{
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    border: none;
+    font-family: 'Bebas';
+}
+
+textarea:focus{
+    outline: none;
+}
+
+input[type=submit]{
+    border: none;
+    background-color: transparent;
+    font-family: 'Bebas';
+}
+
+input[type=submit]:focus{
+    outline: none;
+}

@@ -1,0 +1,31 @@
+.info-container{
+    display: flex;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+}
+
+#map{
+    height: 300px;
+    border-radius: 10px;
+}
+
+button{
+    font-family: 'Bebas';
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+button:focus{
+    outline: none;
+}
+
+a{
+    color: white;
+    font-size: 18px;
+    display: block;
+    text-decoration: underline;
+}
